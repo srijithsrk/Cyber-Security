@@ -1,0 +1,12 @@
+import subprocess
+
+interface = raw_input("Interface> ")
+macaddr = raw_input("MacAddr> ")
+
+print "[+] Changing Mac Address of Interface %s to %s"%(interface,macaddr)
+
+// an other way of executing subprocess module
+subprocess.call(["ifconfig",interface,"down"]). // list
+subprocess.call(["ifconfig",interface,"hw","ether",macaddr]) 
+// commands after ifconfig are treated as an argument of the same command
+subprocess.call(["ifconfig",interface,"up"])
